@@ -4,7 +4,7 @@ pipeline {
   // === Cấu hình nhanh ===
   environment {
     REPO_URL        = 'https://github.com/Shriek-356/DemoCI-CD.git'
-    BRANCH          = 'master'
+    BRANCH          = 'main'
     PY_VENV         = 'venv'  // tên thư mục venv cục bộ cho CI
     PY              = "venv\\Scripts\\python"
     PIP             = "venv\\Scripts\\pip"
