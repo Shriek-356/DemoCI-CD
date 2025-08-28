@@ -1,0 +1,181 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Quản trị - Admin{% endblock %}
+
+{% block nav_links %}
+<span class="navbar-text me-3">
+    <i class="fas fa-user-shield me-1"></i>Admin: {{ username }}
+</span>
+<a class="nav-link" href="/logout">
+    <i class="fas fa-sign-out-alt me-1"></i>Đăng xuất
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-user-shield me-2"></i>Bảng điều khiển Quản trị viên: {{ username }}
+                </h5>
+            </div>
+            <div class="card-body">
+                <!-- Thống kê tổng quan -->
+                <div class="row mb-4">
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <i class="fas fa-books fa-2x mb-2"></i>
+                                <h4>1,250</h4>
+                                <p class="mb-0">Tổng số sách</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users fa-2x mb-2"></i>
+                                <h4>89</h4>
+                                <p class="mb-0">Người dùng</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body text-center">
+                                <i class="fas fa-book-open fa-2x mb-2"></i>
+                                <h4>156</h4>
+                                <p class="mb-0">Đang mượn</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body text-center">
+                                <i class="fas fa-clock fa-2x mb-2"></i>
+                                <h4>12</h4>
+                                <p class="mb-0">Quá hạn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chức năng quản trị -->
+                <div class="row">
+                    <!-- Quản lý người dùng -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Quản lý người dùng</h5>
+                                <p class="card-text">Thêm, sửa, xóa người dùng</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-users me-2"></i>Quản lý
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quản lý sách -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-success">
+                            <div class="card-body text-center">
+                                <i class="fas fa-books fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Quản lý sách</h5>
+                                <p class="card-text">Thêm, sửa, xóa sách</p>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-books me-2"></i>Quản lý
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mượn trả sách -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-warning">
+                            <div class="card-body text-center">
+                                <i class="fas fa-exchange-alt fa-3x text-warning mb-3"></i>
+                                <h5 class="card-title">Mượn trả sách</h5>
+                                <p class="card-text">Xử lý mượn trả sách</p>
+                                <button class="btn btn-warning">
+                                    <i class="fas fa-exchange-alt me-2"></i>Xử lý
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Báo cáo thống kê -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-info">
+                            <div class="card-body text-center">
+                                <i class="fas fa-chart-bar fa-3x text-info mb-3"></i>
+                                <h5 class="card-title">Báo cáo thống kê</h5>
+                                <p class="card-text">Xem các báo cáo và thống kê</p>
+                                <button class="btn btn-info">
+                                    <i class="fas fa-chart-bar me-2"></i>Xem báo cáo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cài đặt hệ thống -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-secondary">
+                            <div class="card-body text-center">
+                                <i class="fas fa-cogs fa-3x text-secondary mb-3"></i>
+                                <h5 class="card-title">Cài đặt hệ thống</h5>
+                                <p class="card-text">Cấu hình hệ thống</p>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-cogs me-2"></i>Cài đặt
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hoạt động gần đây -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h6>Hoạt động gần đây</h6>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Thời gian</th>
+                                        <th>Người dùng</th>
+                                        <th>Hoạt động</th>
+                                        <th>Chi tiết</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>27/08/2025 14:30</td>
+                                        <td>user123</td>
+                                        <td><span class="badge bg-success">Mượn sách</span></td>
+                                        <td>Python cơ bản (S001)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>27/08/2025 14:15</td>
+                                        <td>user456</td>
+                                        <td><span class="badge bg-warning">Trả sách</span></td>
+                                        <td>HTML & CSS (S002)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>27/08/2025 13:45</td>
+                                        <td>user789</td>
+                                        <td><span class="badge bg-info">Đăng ký</span></td>
+                                        <td>Tài khoản mới</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
